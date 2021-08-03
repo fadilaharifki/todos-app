@@ -1,4 +1,4 @@
-import { SET_DATADETAIL, SET_DATADETAIL_LOADING, SET_DATADETAIL_ERROR } from "../actionType";
+import { SET_DATADETAIL } from "../actionType";
 
 export function setDataDetail(input) {
     return {
@@ -6,20 +6,6 @@ export function setDataDetail(input) {
         payload: input
     }
 }
-
-// export function setDataDetailLoading(input) {
-//     return {
-//         type: SET_DATADETAIL_LOADING,
-//         payload: input
-//     }
-// }
-
-// export function setDataDetailError(input) {
-//     return {
-//         type: SET_DATADETAIL_ERROR,
-//         payload: input
-//     }
-// }
 
 export function fetchDataDetail(id) {
     return (dispatch) => {

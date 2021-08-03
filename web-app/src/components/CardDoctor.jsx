@@ -11,7 +11,7 @@ export default function CardDoctor(props) {
     return (
         <div onClick={detail} className="grid grid-cols-2 gap-4 m-2 border-collapse border-2 p-2 rounded-lg">
             <div>
-                <img src={props.list.img} />
+                <img src={props.list.img} alt="" />
             </div>
             <div className="flex flex-col justify-center">
                 <div className="font-extrabold">{props.list.name}</div>

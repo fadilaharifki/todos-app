@@ -1,4 +1,4 @@
-import React, { useEffect, useState, Component } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchDataDetail } from '../store/actions/detail';
@@ -6,50 +6,18 @@ import GoogleMapReact from 'google-map-react';
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
-// class Detail extends Component {
-//     static defaultProps = {
-//         center: {
-//             lat: 59.95,
-//             lng: 30.33
-//         },
-//         zoom: 11
-//     };
-
-//     render() {
-//         return (
-//             // Important! Always set the container height explicitly
-//             <div style={{ height: '100vh', width: '100%' }}>
-//                 <GoogleMapReact
-//                     bootstrapURLKeys={{ key: "AIzaSyCJb5JOSIcFsAOqzjaQkzTUB6wm9ntlRCc" }}
-//                     defaultCenter={this.props.center}
-//                     defaultZoom={this.props.zoom}
-//                 >
-//                     <AnyReactComponent
-//                         lat={59.955413}
-//                         lng={30.337844}
-//                         text="My Marker"
-//                     />
-//                 </GoogleMapReact>
-//             </div>
-//         );
-//     }
-// }
-
-// export default Detail;
-
-
 export default function Detail() {
     let id = useParams()
     const dispatch = useDispatch()
     const dataDetail = useSelector(state => state.dataDetail.data)
-    console.log(dataDetail);
-    const [coordinat, setCoordinat] = useState({
+    // console.log(dataDetail);
+    const [coordinat] = useState({
         center: {
             lat: -6.173650,
             lng: 106.775772
         }
     })
-    console.log(coordinat);
+    // console.log(coordinat);
 
     useEffect(() => {
         dispatch(fetchDataDetail(id.id))
